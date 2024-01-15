@@ -22,6 +22,10 @@
   margin: 0 0 ($base-size * 1.5) 0;
 }
 
+.h2 {
+  text-align: center;
+}
+
 .icon::before {
   padding-right: $base-size;
   color: $color-warning;
