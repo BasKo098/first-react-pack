@@ -8,15 +8,11 @@ const CardForm = props => {
     const [title, setTitle] = useState('');
 
     const handleSubmit = e => {
-        e.preventDefault();
-
-        if (typeof props.action === 'function') {
-            props.action({ title: title }, props.columnId);
-            setTitle('');
-        } else {
-            console.error("props.action is not a function");
-        }
+        e.preventDefault();{
+        props.action({ title: title }, props.columnId);
+        setTitle('');
     };
+};
 
     return (
         <form className= {styles.cardForm} onSubmit={handleSubmit}>
