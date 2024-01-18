@@ -4,11 +4,27 @@ import shortid from 'shortid';
 
 
 
-const reducer = (state, action) => {
+/*const reducer = (state, action) => {
     if(action.type === 'ADD_COLUMN') return { ...state, columns: [...state.columns, { ...action.newColumn, id: shortid() }]};
     return state;
   };
-  
+  */
+
+  const reducer = (state, action) => {
+    switch(action.type) {
+      case 'ADD_COLUMN':
+        return { ...state, columns: [...state.columns, { ...action.payload, id: shortid() }]};
+      default:
+        return state;
+    }
+
+    switch(action.type) {
+        case 'ADD_CARD':
+            return{ ...state, card: [...state.cards, {...action.playload, id:shortid() }] };
+        default:
+            return state;
+    }
+  };
 
 const store = createStore(
   reducer,
