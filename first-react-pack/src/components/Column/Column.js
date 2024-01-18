@@ -11,17 +11,13 @@ const Column = (props) => {
   );
   return (
     <article className={styles.column}>
-      <h2 className={styles.title}>
-        <span className={styles.icon + " fa fa-" + props.icon} /> {props.title}
-      </h2>
-      <ul className={styles.cards}>
-        {cards.map((card) => (
-          <Card key={card.id} title={card.title} />
-        ))}
-        <CardForm columnId={props.id} action={props.addCard} />
-      </ul>
-    </article>
-  );
+        <h2 className={styles.h2}><span className={styles.icon + ' fa fa-' + props.icon} />{props.title}</h2>       
+        <ul className={styles.cards}>
+            <CardForm columnId={props.id} />
+        </ul>
+    </article>  
+);
+
 };
   
 export default Column;
