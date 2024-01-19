@@ -23,7 +23,12 @@ import shortid from 'shortid';
             ...state,
             cards: [...state.cards, { ...action.payload, id: shortid() }],
           };
-    
+
+        case "UPDATE_SEARCHSTRING":
+            return{
+                 ...state, 
+                 searchString: action.payload 
+            };
         default:
           return state;
       }
