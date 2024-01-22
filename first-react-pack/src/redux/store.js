@@ -14,9 +14,13 @@ import { strContains } from '../utils/strContains';
 //selectors
 
 export const getAllColumns = (state) => state.columns;
+export const getColumnsByList = ({ columns }, listId) => 
+    columns.filter((column => column.listId === listId ));
+
 export const getListById = ({ lists },listId) => lists.find(list => list.id === listId);
-export const getFilteredCards = ({ cards, searchString }, columnId) => cards
-  .filter(card => card.columnId === columnId && strContains(card.title, searchString));
+export const getFilteredCards = ({ cards, searchString }, columnId) => 
+    cards.filter(card => card.columnId === columnId && strContains(card.title, searchString));
+
 
 
   // action creators
