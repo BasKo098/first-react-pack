@@ -1,0 +1,35 @@
+@import '../../styles/settings.scss';
+
+.navBar{
+    background-color: darken($color-dark, 3%);
+    display: flex;
+    justify-content: space-between;
+    padding: 0 40px;
+    width: 100%;
+    align-items: center;
+
+};
+
+.navList {
+    display: flex;
+    flex-direction: row;
+        a{
+            color:$color-light;
+            text-decoration: none;
+        }
+   
+}
+
+.liList{
+    list-style: none;
+    padding-right: 10px;
+}
+
+
+.homeIcon {
+    font-size: 24px;
+
+    a{
+        color: $color-light;
+    };
+};
