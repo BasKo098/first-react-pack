@@ -1,7 +1,8 @@
 @import '../../styles/settings.scss';
 
 .hero {
-  padding: $base-size;
+  padding: $base-size*3;
+  text-align: center;
 }
 
 .subtitle {
