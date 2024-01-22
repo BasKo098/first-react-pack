@@ -1,35 +1,41 @@
 @import '../../styles/settings.scss';
 
-.navBar{
-    background-color: darken($color-dark, 3%);
-    display: flex;
-    justify-content: space-between;
-    padding: 0 40px;
-    width: 100%;
-    align-items: center;
-
-};
-
-.navList {
+.nav {
     display: flex;
     flex-direction: row;
-        a{
-            color:$color-light;
-            text-decoration: none;
-        }
-   
+    justify-content: space-between;
+    align-items: center;
+    padding: ($base-size / 6) ($base-size * 4);
+    background-color: darken($color-dark, 3%);
+  
+    a {
+      font-size: ($base-size * 2);
+      color: $color-light;
+      transition: $transition;
+    }
+  
+    a:hover {
+      transform: scale(1.2);
+    }
+  
+    ul {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      gap: ($base-size * 2);
+      list-style-type: none;
+  
+      a {
+        font-size: ($base-size * 1.4);
+        font-family: $font-text;
+        text-decoration: none;
+        font-weight: normal;
+        font-style: italic;
+      }
+    }
+    
+    .linkActive {
+      color: $color-warning;
+    }
 }
-
-.liList{
-    list-style: none;
-    padding-right: 10px;
-}
-
-
-.homeIcon {
-    font-size: 24px;
-
-    a{
-        color: $color-light;
-    };
-};

@@ -1,19 +1,17 @@
-
 import styles from './NavBar.module.scss';
-import {Link} from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom';
 
-const NavBar = props => {
+const NavBar = () => {
+  return (
+    <nav className={styles.nav}>
+      <Link to="/"><i className="fa fa-tasks"></i></Link>
+      <ul>
+      <li><NavLink className={({ isActive }) => isActive ? styles.linkActive : undefined} to="/">Home</NavLink></li>
+      <li><NavLink className={({ isActive }) => isActive ? styles.linkActive : undefined} to="/favorite">Favorite</NavLink></li>
+      <li><NavLink className={({ isActive }) => isActive ? styles.linkActive : undefined} to="/about">About</NavLink></li>
+      </ul>
+    </nav>
+  );
+}
 
-    return (
-        <nav className={styles.navBar}>
-            <div className={styles.homeIcon}><Link to = "/" className='fa fa-bars'></Link></div>
-            <ul className={styles.navList}>
-            <li className={styles.liList}><Link to="/">Home</Link></li>
-                <li className={styles.liList}><Link to="/favorite">Favorite</Link></li>
-                <li className={styles.liList}><Link to="/about">About</Link></li>
-            </ul>
-        </nav>
-    );
-};
-
-export default NavBar
+export default NavBar;
