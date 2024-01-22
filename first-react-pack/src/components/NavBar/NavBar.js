@@ -5,7 +5,7 @@ const NavBar = props => {
 
     return (
         <nav className={styles.navBar}>
-            <image className={styles.homeIcon}><a href = "" className='fa fa-bars'></a></image>
+            <div className={styles.homeIcon}><a href = "" className='fa fa-bars'></a></div>
             <ul className={styles.navList}>
                 <li className={styles.liList}><a href = "">Home</a></li>
                 <li className={styles.liList}><a href = "">Favorite</a></li>
