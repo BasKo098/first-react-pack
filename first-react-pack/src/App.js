@@ -19,7 +19,7 @@ const App = () => {
           <Route path="/about" element={<About />} />
           <Route path="/favorite" element={<Favorite />} />
           <Route path="*" element={<NotFound />} />
-          <Route path="/list" element={< List />} />
+          <Route path="/list/:listId" element={<List />} />
         </Routes>
       </Container>
     </main>
