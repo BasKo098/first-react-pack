@@ -12,3 +12,13 @@
     font-weight: bold;
 }
 
+.star {
+    border: none;
+    background-color: $color-light;
+    cursor: pointer;
+  }
+  
+.favorite {
+    color: $color-warning;
+  }
+

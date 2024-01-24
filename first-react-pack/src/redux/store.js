@@ -6,6 +6,8 @@ import { strContains } from '../utils/strContains';
 
 
 
+
+
 /*const reducer = (state, action) => {
     if(action.type === 'ADD_COLUMN') return { ...state, columns: [...state.columns, { ...action.newColumn, id: shortid() }]};
     return state;
@@ -18,6 +20,9 @@ export const getAllLists = ({ lists }) => lists;
 export const getListById = (state, listId) => state.lists.find(element => element.id === listId);
 export const getFilteredCards = ({ cards, searchString }, columnId) => 
     cards.filter(card => card.columnId === columnId && strContains(card.title, searchString));
+export const getFavoriteCard = ({cards}, isFavorite) => cards.filter(card => card.isFavorite === isFavorite);  
+export const getCardById = ({ cards }, cardId) => cards.filter(card => card.id === cardId);
+
 
 
 
@@ -26,6 +31,8 @@ export const addColumn = payload => ({ type: 'ADD_COLUMN', payload});
 export const addCard = payload => ({ type: 'ADD_CARD', payload});
 export const updateSearchString = payload => ({type: 'UPDATE_SEARCHSTRING', payload});
 export const addList = payload => ({type: 'ADD_LIST', payload});
+export const toggleCardFavorite = payload =>({type: 'TOGGLE_CARD_FAVORITE', payload});
+
 
   const reducer = (state, action) => {
     switch (action.type) {
@@ -50,8 +57,11 @@ export const addList = payload => ({type: 'ADD_LIST', payload});
         case "ADD_LIST":
             return{
                 ...state,
-                lists: [...state.lists, {...action.payload, id: shortid() }],
+                lists: [...state.lists, { ...action.payload, id: shortid() }],
             }
+            case 'TOGGLE_CARD_FAVORITE':
+                return { ...state, cards: state.cards.map(card => (card.id === action.payload) ? { ...card, isFavorite: !card.isFavorite } : card) };
+          
         default:
           return state;
       }

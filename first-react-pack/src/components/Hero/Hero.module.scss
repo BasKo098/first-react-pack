@@ -3,7 +3,7 @@
 .hero {
   padding: $base-size*3;
   text-align: center;
-}
+};
 
 .subtitle {
   padding: ($base-size * 2) 0;
@@ -11,8 +11,4 @@
   font-size: ($base-size * 2);
   font-style: italic;
   font-weight: normal;
-}
-
-.subtitle {
-  margin-top: (- $base-size * 3);
-}
+};
