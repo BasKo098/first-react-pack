@@ -17,7 +17,7 @@ const Favorite =  () => {
         </div>
     );
 
-    return (
+    else (
         <div className={styles.favorite}>
             <PageTitle>Favorite</PageTitle>  
             <p>This is favorite.</p> 
