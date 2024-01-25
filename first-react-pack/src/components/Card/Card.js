@@ -4,6 +4,7 @@ import { getCardById } from '../../redux/cardsReducer';
 import {toggleCardFavorite } from '../../redux/cardsReducer';
 import {clsx} from 'clsx';
 
+
 const Card = (props) => {
 
     const card = useSelector(state => getCardById(state, props.id))
@@ -18,7 +19,7 @@ const Card = (props) => {
         <li className={styles.card}>{props.title}
             <div>
                 <button onClick={toggle} className={styles.star}>
-                    <i className={clsx(card.isFavorite && styles.favorite, 'fa-star-o')}></i>
+                    <i className={clsx(card.isFavorite && styles.favorite, "fa fa-star-o" )}></i>
                 </button>
             </div>
         </li>

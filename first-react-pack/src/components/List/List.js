@@ -7,7 +7,7 @@ import { getColumnsByList } from '../../redux/columnsReducer';
 import { getListById } from '../../redux/listRedux';
 import { useParams, Navigate } from 'react-router';
 
-const List = (props) => {
+const List = () => {
     
     const { listId } = useParams();
     const listData = useSelector(state => getListById(state, listId))
