@@ -8,7 +8,7 @@ import { getFilteredCards } from '../../redux/cardsReducer';
 const Column = (props) => {
   //const cards = useSelector((state) => state.cards);
    
-    const cards = useSelector(state => getFilteredCards(state, props.id));
+  const cards = useSelector(state => getFilteredCards(state, props.id));
 
   return (
     <article className={styles.column}>
@@ -19,7 +19,6 @@ const Column = (props) => {
         <CardForm columnId={props.id} />
     </article>  
    );
-   console.log(cards);
 };
   
 export default Column;

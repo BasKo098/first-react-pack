@@ -15,7 +15,7 @@ const Card = (props) => {
     };
 
     const remove = () => {
-        dispatch(removeCard(props.id))
+        dispatch(removeCard(props.id ))
     };
 
 
