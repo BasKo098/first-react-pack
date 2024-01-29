@@ -5,7 +5,7 @@ import { getFavoriteCard } from '../../redux/cardsReducer';
 import Card from '../Card/Card';
 
 
-const Favorite =  () => {
+const Favorite =  (listId) => {
 
     const cards = useSelector(state => getFavoriteCard(state, true));
 
@@ -22,7 +22,7 @@ const Favorite =  () => {
             <PageTitle>Favorite</PageTitle>  
             <p>This is favorite.</p> 
             <ul className= {styles.cards}>
-                {cards.map((card)=> (<Card key={card.id} title={card.title} isFavorite={card.isFavorite} id={card.id} />
+                {cards.map((card)=> (<Card key={card.id} title={card.title} isFavorite={card.isFavorite} listId={listId} />
                 ))}
             </ul>
         </div>
