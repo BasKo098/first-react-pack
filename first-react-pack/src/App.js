@@ -9,7 +9,9 @@ import List from './components/List/List'
 import NotFound from './components/NotFound/NotFound';
 import { Routes, Route } from 'react-router-dom';
 
+
 const App = () => {
+
   return (
     <main>
       <NavBar />

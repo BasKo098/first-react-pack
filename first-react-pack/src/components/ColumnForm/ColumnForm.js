@@ -6,8 +6,7 @@ import { useState } from 'react';
 import { addColumn } from '../../redux/columnsReducer';
 
 
-
-const ColumnForm = props => {
+const ColumnForm = (props) => {
     const dispatch = useDispatch();
     const [title, setTitle] = useState('');
     const [icon, setIcon] = useState('');
@@ -19,8 +18,6 @@ const ColumnForm = props => {
         setTitle('');
         setIcon('');
      };
-   
-console.log('listId:', listId);
 
 	return (
         <form className= {styles.columnForm} onSubmit= {handleSubmit}>

@@ -1,24 +1,26 @@
 import styles from './Card.module.scss';
 import { useDispatch, useSelector } from 'react-redux';
-import { getCardById, removeCard } from '../../redux/cardsReducer'; 
-import {toggleCardFavorite } from '../../redux/cardsReducer';
-import {clsx} from 'clsx';
+import { getCardById } from '../../redux/cardsReducer'; 
+import { removeCard } from '../../redux/cardsReducer';
+import { toggleCardFavorite } from '../../redux/cardsReducer';
+import { clsx } from 'clsx';
 
 
 const Card = (props) => {
 
     const card = useSelector(state => getCardById(state, props.id))
     const dispatch = useDispatch()
+  
 
     const toggle = () => {
     dispatch(toggleCardFavorite(props.id))
     };
 
     const remove = () => {
-        dispatch(removeCard(props.id ))
+        dispatch(removeCard(props.id))
     };
 
-
+    console.log('cardId', props.id);
     return (
         <li className={styles.card}>{props.title}
             <div>
@@ -31,6 +33,7 @@ const Card = (props) => {
             </div>
         </li>
     );
+    
 };
 
 export default Card;
