@@ -4,7 +4,7 @@ import strContains from "../utils/strContains";
 
 //selectors
 export const getFilteredCards = ({ cards, searchString }, columnId) => cards.filter(card => card.columnId === columnId && strContains(card.title, searchString));
-export const getCardById = ({ cards }, cardId) => cards.filter(card => card.id === cardId);
+export const getCardById = ({ cards }, cardId) => cards.find(card => card.id === cardId);
 export const getFavoriteCard = ({ cards }, isFavorite) => cards.filter(card => card.isFavorite === isFavorite);
 
 
