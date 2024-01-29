@@ -9,6 +9,7 @@ import { clsx } from 'clsx';
 const Card = (props) => {
 
     const card = useSelector(state => getCardById(state, props.id))
+    console.log('card', card)
     const dispatch = useDispatch()
   
 

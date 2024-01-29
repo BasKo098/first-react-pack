@@ -6,8 +6,9 @@ import Card from '../Card/Card';
 
 
 const Favorite =  () => {
-
+    
     const cards = useSelector(state => getFavoriteCard(state));
+    console.log('cards', cards);
 
     if (!cards.length)
     return (
@@ -16,7 +17,7 @@ const Favorite =  () => {
         </div>
     );
 
-    else (
+    return (
         <div className={styles.favorite}>
             <PageTitle>Favorite</PageTitle>  
             <p>This is favorite.</p> 
