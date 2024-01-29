@@ -7,15 +7,15 @@ import { addColumn } from '../../redux/columnsReducer';
 
 
 
-const ColumnForm = ({listId}) => {
+const ColumnForm = props => {
     const dispatch = useDispatch();
     const [title, setTitle] = useState('');
     const [icon, setIcon] = useState('');
-    
+    const listId = props.listId;
     
     const handleSubmit = e => {
         e.preventDefault();
-        dispatch(addColumn({ title, icon, listId: {listId}}));
+        dispatch(addColumn({ title, icon, listId}));
         setTitle('');
         setIcon('');
      };
