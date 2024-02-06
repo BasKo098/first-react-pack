@@ -9,19 +9,16 @@ import { clsx } from 'clsx';
 const Card = (props) => {
 
     const card = useSelector(state => getCardById(state, props.id))
-    console.log('card', card)
     const dispatch = useDispatch()
   
-
     const toggle = () => {
-    dispatch(toggleCardFavorite(props.id))
+        dispatch(toggleCardFavorite(props.id))
     };
 
     const remove = () => {
         dispatch(removeCard(props.id))
     };
 
-    console.log('cardId', props.id);
     return (
         <li className={styles.card}>{props.title}
             <div>

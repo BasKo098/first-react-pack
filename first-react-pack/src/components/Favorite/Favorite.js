@@ -13,7 +13,7 @@ const Favorite =  () => {
     if (!cards.length)
     return (
         <div className={styles.noFavoriteCards}>
-        <PageTitle>You don't have favourite cards yet.</PageTitle>
+            <PageTitle>You don't have favourite cards yet.</PageTitle>
         </div>
     );
 
